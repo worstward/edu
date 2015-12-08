@@ -1,0 +1,63 @@
+﻿@model Edu.Models.Enrollee
+
+@functions
+{
+    string Validate(MvcHtmlString str, string htmlClass)
+    {
+        return Html.ViewData.ModelState.IsValidField(str.ToString()) ? null : htmlClass;
+    }
+}
+
+<style>
+
+    input[type="text"] {
+    width: 97%;
+}
+
+.field-validation-error {color: #f00; padding: 0; margin: 0;}
+.field-validation-valid { display: none;  padding: 0; margin: 0;}
+.input-validation-error { border: 1px solid #f00; background-color: #fee;  padding: 0; margin: 0;}
+.validation-summary-errors { font-weight: bold; color: #f00;  padding: 0; margin: 0;}
+.validation-summary-valid { display: none;  padding: 0; margin: 0;}
+
+</style>
+
+    <div style="text-align:justify" class="@(Html.ViewData.ModelState.IsValid ? null : "alert-danger")">
+        <p>@Html.ValidationMessageFor(model => model.Name)</p>
+        <p>@Html.ValidationMessageFor(model => model.Surname)</p>
+        <p>@Html.ValidationMessageFor(model => model.Phone)</p>
+        <p>@Html.ValidationMessageFor(model => model.Email)</p>
+    </div>
+    <label for="NameField"><span class="glyphicon glyphicon-user"></span>Персональные данные</label><br />
+
+    <div class="form-group @Validate(Html.IdFor(x => x.Name), "has-error") has-feedback">
+        @Html.TextBoxFor(model => model.Name, new { @placeholder = " Имя", @class = "form-control" })
+        <span class="glyphicon  @Validate(Html.IdFor(x => x.Name), "glyphicon-remove") form-control-feedback"></span>
+    </div>
+
+    <div class="form-group @Validate(Html.IdFor(x => x.Surname), "has-error") has-feedback">
+        @Html.TextBoxFor(model => model.Surname, new { @placeholder = " Фамилия", @class = "form-control" })
+        <span class="glyphicon  @Validate(Html.IdFor(x => x.Surname), "glyphicon-remove") form-control-feedback"></span>
+    </div>
+
+    <label for="Phone"><span class="glyphicon glyphicon-phone-alt"></span>Контактный телефон</label><br />
+
+    <div class="form-group @Validate(Html.IdFor(x => x.Phone), "has-error") has-feedback">
+        @Html.TextBoxFor(model => model.Phone, new { @placeholder = " Номер телефона", @class = "form-control" })
+        <span class="glyphicon  @Validate(Html.IdFor(x => x.Phone), "glyphicon-remove") form-control-feedback"></span>
+    </div>
+
+    <label for="NameField"><span class="glyphicon glyphicon-envelope"></span>Электронная почта</label><br />
+    <div class="form-group  @Validate(Html.IdFor(x => x.Email), "has-error") has-feedback">
+        @Html.TextBoxFor(model => model.Email, new { @placeholder = " E-mail", @class = "form-control" })
+        <span class="glyphicon  @Validate(Html.IdFor(x => x.Email), "glyphicon-remove") form-control-feedback"></span>
+    </div>
+    <br />
+
+    <div class="g-recaptcha" data-sitekey="6LeGvhETAAAAACgKzMAPTZMNDlJCP5b8SlWSrUS2"></div>
+    @Html.Label("text", " Подтвердите действие")
+    <input id="SubFrmOk" class="btn btn-success" type="submit" value="Отправить" />
+
+
+
+

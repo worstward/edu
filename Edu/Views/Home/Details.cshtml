@@ -1,0 +1,16 @@
+﻿@model Edu.Domain.Entities.Course
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal" area-hidden="true"><i class="glyphicon glyphicon-remove"></i></button>
+        <h4>@Model.Name - подробности</h4>
+    </div>
+    <div class="modal-body" id="descModalBody">
+        <dl class="dl-horizontal">
+            <dt>Курс:</dt>
+            <dd>@Html.DisplayFor(crs => crs.Name)</dd>
+            <dt>Описание:</dt>
+            <dd>@Html.DisplayFor(crs => crs.LongDescription)</dd>
+        </dl>
+    </div>
+</div>
