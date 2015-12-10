@@ -22,11 +22,16 @@
 
 </style>
 
-    <div style="text-align:justify" class="@(Html.ViewData.ModelState.IsValid ? null : "alert-danger")">
+    <div style="text-align:justify" class="@(Html.ViewData.ModelState.IsValid && ViewBag.isCaptchaValid ? null : "alert-danger")">
         <p>@Html.ValidationMessageFor(model => model.Name)</p>
         <p>@Html.ValidationMessageFor(model => model.Surname)</p>
         <p>@Html.ValidationMessageFor(model => model.Phone)</p>
         <p>@Html.ValidationMessageFor(model => model.Email)</p>
+    @if (!ViewBag.isCaptchaValid)
+    {
+        <p class="field-validation-error">Неверно введена капча</p>
+    }
+
     </div>
     <label for="NameField"><span class="glyphicon glyphicon-user"></span>Персональные данные</label><br />
 
@@ -54,7 +59,7 @@
     </div>
     <br />
 
-    <div class="g-recaptcha" data-sitekey="6LeGvhETAAAAACgKzMAPTZMNDlJCP5b8SlWSrUS2"></div>
+    <div class="g-recaptcha" data-sitekey="6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I"></div>
     @Html.Label("text", " Подтвердите действие")
     <input id="SubFrmOk" class="btn btn-success" type="submit" value="Отправить" />
 

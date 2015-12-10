@@ -55,6 +55,7 @@ namespace Edu.Controllers
         [HttpGet]
         public PartialViewResult SignUpForm()
         {
+            ViewBag.isCaptchaValid = true;
             return PartialView();
         }
 
@@ -64,7 +65,7 @@ namespace Edu.Controllers
             string Encoded = Request.Form["g-Recaptcha-Response"];
 
             var isCaptchaValid = CaptchaAnswer.ValidateCaptcha(Encoded);
-
+            ViewBag.isCaptchaValid = isCaptchaValid;
             if (ModelState.IsValid && isCaptchaValid)
             {
                 SmtpClient smtp = new SmtpClient();
