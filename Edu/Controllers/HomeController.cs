@@ -87,6 +87,7 @@ namespace Edu.Controllers
                 smtp.Send(mail);
                 return PartialView("SignUpOk", enrollee);
             }
+            
             return PartialView();
         }
 

@@ -8,6 +8,18 @@
     }
 }
 
+<script type="text/javascript">
+
+        function CaptchaReload() {
+            grecaptcha.render("recaptcha", {
+                "sitekey": "6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I",
+                "callback": grecaptcha.reset()
+            });
+        }
+</script>
+
+
+
 <style>
 
     input[type="text"] {
@@ -59,10 +71,6 @@
     </div>
     <br />
 
-    <div class="g-recaptcha" data-sitekey="6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I"></div>
+    <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I"></div>
+    
     @Html.Label("text", " Подтвердите действие")
-    <input id="SubFrmOk" class="btn btn-success" type="submit" value="Отправить" />
-
-
-
-

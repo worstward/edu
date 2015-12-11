@@ -58,17 +58,6 @@
         });
     });
 
-    $(function () {
-        $.ajaxSetup({ cache: false });
-        $(".compItem").click(function (e) {
-
-            e.preventDefault();
-            $.get(this.href, function (data) {
-                $('#dialogContent').html(data);
-                $('#modDialog').modal('show');
-            });
-        });
-    })
 
     $(function () {
         $("footer img")
@@ -81,15 +70,15 @@
                 $(this).attr("src", src);
             });
     });
-
-
     </script>
+    }
+
+    
+
 
 </head>
 
 <body>
-    <div id="fakeLoader"></div>
-
      <div id="bodyContents">
          <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -129,7 +118,7 @@
                      </div>
                      <div class="modal-body">
 
-                         @using (Ajax.BeginForm("SignUpForm", "Home", null, new AjaxOptions() { UpdateTargetId = "SubscriptionForm", HttpMethod = "Post" }, new { id = "SubscriptionForm" }))
+                         @using (Ajax.BeginForm("SignUpForm", "Home", null, new AjaxOptions() { OnFailure = "CaptchaReload", OnSuccess = "CaptchaReload", UpdateTargetId = "SubscriptionForm", HttpMethod = "Post" }, new { id = "SubscriptionForm" }))
                          {
                             @Html.Action("SignUpForm", "Home");
                          }
@@ -137,6 +126,7 @@
 
                      <div class="modal-footer">
 
+                         <input id="SubFrmOk" class="btn btn-success" type="submit" style="float:right" form="SubscriptionForm" value="Отправить" />
                      </div>
 
                  </div>
