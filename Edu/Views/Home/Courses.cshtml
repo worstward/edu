@@ -21,7 +21,6 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach (var c in Model)
             {
                 var tag =c.Price < 10 ? "success" : "info";
@@ -32,7 +31,6 @@
                     <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { id = c.Id }, new { @class = "compItem" })</td>
                 </tr>
             }
-
         </tbody>
     </table>
 </div>
