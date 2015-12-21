@@ -7,14 +7,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Edu.Domain.Entities
 {
+    [Table("Courses")]
     public class Course
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        [Column("ShortDescription", TypeName = "NVARCHAR")]
+        [Column("ShortDescription")]
         public string ShortDescription { get; set; }
-        [Column("LongDescription", TypeName = "NVARCHAR")]
+        [Column("LongDescription")]
         public string LongDescription { get; set; }
         public decimal Price { get; set; }
     }
