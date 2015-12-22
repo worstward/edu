@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using Edu.Domain.Entities;
+using Edu.Domain.Models;
 
-namespace Edu.Domain.Concrete
+namespace Edu.Domain.Abstract
 {
-    public class EFDbContext : DbContext
+    public interface IDbContext
     {
-        public DbSet<Course> Courses { get; set; }
-
+        DbSet<Course> Courses { get; set; }
     }
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿@model Edu.Domain.Entities.Course
+=======
+﻿@model Edu.Domain.Models.Course
+>>>>>>> TableTricks
 
 <div class="modal-content">
     <div class="modal-header">
@@ -10,7 +14,11 @@
             <dt>Курс:</dt>
             <dd>@Html.DisplayFor(crs => crs.Name)</dd>
             <dt>Описание:</dt>
+<<<<<<< HEAD
             <dd>@Html.DisplayFor(crs => crs.LongDescription)</dd>
+=======
+            <dd>@Html.DisplayFor(crs => crs.CourseDescription.LongDescription)</dd>
+>>>>>>> TableTricks
         </dl>
     </div>
 </div>

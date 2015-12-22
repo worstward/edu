@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿@model IEnumerable<@Edu.Domain.Entities.Course>
+=======
+﻿@model IEnumerable<@Edu.Domain.Models.Course>
+>>>>>>> TableTricks
 
 @{
     ViewBag.Title = "Программы обучения";
@@ -27,7 +31,11 @@
                 <tr class=@tag>
                     <td style="text-align: left">@c.Name</td>
                     <td style="text-align: center">@c.Price</td>
+<<<<<<< HEAD
                     <td style="text-align: center;"><p>@c.ShortDescription</p></td>
+=======
+                    <td style="text-align: center;"><p>@c.CourseDescription.ShortDescription</p></td>
+>>>>>>> TableTricks
                     <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { id = c.Id }, new { @class = "compItem" })</td>
                 </tr>
             }
