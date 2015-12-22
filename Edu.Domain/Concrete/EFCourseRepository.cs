@@ -4,13 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Edu.Domain.Abstract;
-using Edu.Domain.Entities;
+using Edu.Domain.Models;
+using System.Data.Entity;
 
 namespace Edu.Domain.Concrete
 {
     public class EFCourseRepository : ICourseRepository
     {
-        EFDbContext context = new EFDbContext();
+
+
+        public EFCourseRepository(IDbContext ctx)
+        {
+            context = ctx;
+        }
+
+        IDbContext context;
 
         public IQueryable<Course> Courses
         {

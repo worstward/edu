@@ -64,6 +64,7 @@ namespace Edu.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICourseRepository>().To<EFCourseRepository>();
+            kernel.Bind<IDbContext>().To<TestDbContext>();
         }        
     }
 }

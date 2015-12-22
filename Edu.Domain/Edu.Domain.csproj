@@ -49,9 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICourseRepository.cs" />
+    <Compile Include="Abstract\IDbContext.cs" />
     <Compile Include="Concrete\EFCourseRepository.cs" />
-    <Compile Include="Concrete\EFDbContext.cs" />
-    <Compile Include="Entities\Course.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseDescription.cs" />
+    <Compile Include="Models\Mapping\CourseDescriptionMap.cs" />
+    <Compile Include="Models\Mapping\CourseMap.cs" />
+    <Compile Include="Concrete\TestDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
