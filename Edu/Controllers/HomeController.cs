@@ -17,12 +17,7 @@ namespace Edu.Controllers
     {
         //
         // GET: /Home/
-        ICourseRepository repository;
-        public HomeController(ICourseRepository repository)
-        {
-            this.repository = repository;
-        }
-
+      
         public ActionResult Index()
         {
             ViewBag.Title = "My Edu WebApp";
@@ -33,23 +28,9 @@ namespace Edu.Controllers
             return View();
         }
 
-        public ActionResult Courses()
-        {
-            return View(repository.Courses);
-        }
-
         public ActionResult InstituteHead()
         {
             return View();
-        }
-
-        public ActionResult Details(int id)
-        {
-            var course = repository.Courses.FirstOrDefault(crs => crs.Id == id);
-            if (course != null)
-                return PartialView(course);
-            
-            return HttpNotFound();
         }
 
         [HttpGet]
@@ -90,7 +71,6 @@ namespace Edu.Controllers
             
             return PartialView();
         }
-
 
 
         public ActionResult Gallery()

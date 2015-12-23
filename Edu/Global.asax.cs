@@ -12,7 +12,7 @@ namespace Edu
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<EFDbContext>(null);
+            Database.SetInitializer<TestDbContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
