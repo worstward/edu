@@ -71,12 +71,5 @@ namespace Edu.Controllers
             
             return PartialView();
         }
-
-
-        public ActionResult Gallery()
-        {
-            return View();
-        }
-        
 	}
 }

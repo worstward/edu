@@ -1,0 +1,37 @@
+﻿@model IEnumerable<@Edu.Domain.Models.Course>
+
+@{
+    ViewBag.Title = "Программы обучения";
+}
+
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<h2 style="text-align: center">Образовательные программы</h2>
+<div id="courseTable" class="container">
+   
+    <table class="table table-hover" id="tableContainer">
+        <thead>
+            <tr>
+                <th style="text-align: left">Курс</th>
+                <th style="text-align: center">Стоимость</th>
+                <th style="text-align: center">Краткое описание</th>
+                <th style="text-align: right">Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                var tag =c.Price < 10 ? "success" : "info";
+                <tr class=@tag>
+                    <td style="text-align: left">@c.Name</td>
+                    <td style="text-align: center">@c.Price</td>
+                    <td style="text-align: center;"><p>@c.CourseDescription.ShortDescription</p></td>
+                    <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { id = c.Id }, new { @class = "compItem" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

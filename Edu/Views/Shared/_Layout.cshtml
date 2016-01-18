@@ -51,17 +51,17 @@
         });
     });
 
-    $(function () {
-        $.ajaxSetup({ cache: false });
-        $(".compItem").click(function (e) {
+    //$(function () {
+    //    $.ajaxSetup({ cache: false });
+    //    $(".compItem").click(function (e) {
 
-            e.preventDefault();
-            $.get(this.href, function (data) {
-                $('#dialogContent').html(data);
-                $('#modDialog').modal('show');
-            });
-        });
-    })
+    //        e.preventDefault();
+    //        $.get(this.href, function (data) {
+    //            $('#dialogContent').html(data);
+    //            $('#modDialog').modal('show');
+    //        });
+    //    });
+    //})
 
     $(function () {
         $('#SubFrmClose').click(function () {
@@ -83,11 +83,8 @@
     });
     </script>
     
-
-    
-
-
 </head>
+
 
 <body>
      <div id="bodyContents">
@@ -106,7 +103,7 @@
                         <li><a href="@Url.Action("Index", "Home")">Об институте</a></li>
                         <li><a href="@Url.Action("Courses", "Course")">Курсы</a></li>
                         <li><a href="@Url.Action("InstituteHead", "Home")">Ученый совет</a></li>
-                        <li><a href="@Url.Action("Gallery", "Home")">Галерея</a></li>
+                        <li><a href="@Url.Action("ViewGallery", "Gallery")">Галерея</a></li>
                         <li><a href="@Url.Action("Contacts", "Home")">Контакты</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
