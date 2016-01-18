@@ -17,12 +17,12 @@ namespace Edu.Controllers
     {
         //
         // GET: /Home/
-      
         public ActionResult Index()
         {
             ViewBag.Title = "My Edu WebApp";
             return View();
         }
+
         public ActionResult Contacts()
         {
             return View();

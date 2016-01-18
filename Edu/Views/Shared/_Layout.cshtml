@@ -51,17 +51,28 @@
         });
     });
 
-    //$(function () {
-    //    $.ajaxSetup({ cache: false });
-    //    $(".compItem").click(function (e) {
+    $(function () {
+        $.ajaxSetup({ cache: false });
+        $(".compItem").click(function (e) {
 
-    //        e.preventDefault();
-    //        $.get(this.href, function (data) {
-    //            $('#dialogContent').html(data);
-    //            $('#modDialog').modal('show');
-    //        });
-    //    });
-    //})
+            e.preventDefault();
+            $.get(this.href, function (data) {
+                $('#dialogContent').html(data);
+                $('#modDialog').modal('show');
+            });
+        });
+    })
+
+
+    $(function () {
+        $(".carousel-inner .item")
+            .mouseover(function () {
+                $(this).css("cursor", "pointer");
+            })
+            .click(function () {
+                $(".right.carousel-control").click();
+            });
+    });
 
     $(function () {
         $('#SubFrmClose').click(function () {

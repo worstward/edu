@@ -23,7 +23,6 @@ namespace Edu.Controllers
             return View(repository.Courses);
         }
 
-
         public ActionResult Details(int id)
         {
             var course = repository.Courses.FirstOrDefault(crs => crs.Id == id);
