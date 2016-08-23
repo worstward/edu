@@ -51,16 +51,20 @@
     <Compile Include="Abstract\ICourseRepository.cs" />
     <Compile Include="Abstract\IDbContext.cs" />
     <Compile Include="Concrete\EFCourseRepository.cs" />
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\CourseDescription.cs" />
-    <Compile Include="Models\Mapping\CourseDescriptionMap.cs" />
-    <Compile Include="Models\Mapping\CourseMap.cs" />
+    <Compile Include="Concrete\Models\Course.cs" />
+    <Compile Include="Concrete\Models\CourseDescription.cs" />
+    <Compile Include="Concrete\Models\CoursesPagingViewModel.cs" />
+    <Compile Include="Concrete\Models\Mapping\CourseDescriptionMap.cs" />
+    <Compile Include="Concrete\Models\Mapping\CourseMap.cs" />
+    <Compile Include="Concrete\CourseDbInitializer.cs" />
     <Compile Include="Concrete\TestDbContext.cs" />
+    <Compile Include="Concrete\Models\Paging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,9 +10,9 @@
 
 <script type="text/javascript">
 
-        function CaptchaReload() {
+    function CaptchaReload() {
             grecaptcha.render("recaptcha", {
-                "sitekey": "6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I",
+                "sitekey": "6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk",
                 "callback": grecaptcha.reset()
             });
         }
@@ -20,21 +20,9 @@
 
 
 
-<style>
 
-    input[type="text"] {
-    width: 97%;
-}
 
-.field-validation-error {color: #f00; padding: 0; margin: 0;}
-.field-validation-valid { display: none;  padding: 0; margin: 0;}
-.input-validation-error { border: 1px solid #f00; background-color: #fee;  padding: 0; margin: 0;}
-.validation-summary-errors { font-weight: bold; color: #f00;  padding: 0; margin: 0;}
-.validation-summary-valid { display: none;  padding: 0; margin: 0;}
-
-</style>
-
-    <div style="text-align:justify" class="@(Html.ViewData.ModelState.IsValid && ViewBag.isCaptchaValid ? null : "alert-danger")">
+    <div style="text-align: justify; width: 97%; " class="@(Html.ViewData.ModelState.IsValid && ViewBag.isCaptchaValid ? null : "alert-danger")">
         <p>@Html.ValidationMessageFor(model => model.Name)</p>
         <p>@Html.ValidationMessageFor(model => model.Surname)</p>
         <p>@Html.ValidationMessageFor(model => model.Phone)</p>
@@ -72,9 +60,8 @@
         <span class="glyphicon  @Validate(Html.IdFor(x => x.Email), "glyphicon-remove") form-control-feedback"></span>
     </div>
     <br />
-
-    <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfkzxITAAAAAO6KEcVmEl3J8ShMy0QNIgVOmy6I"></div>
+        <div class="g-recaptcha" data-sitekey="6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk"></div>
 <hr />   
-<input id="SubFrmOk" class="btn btn-success" type="submit" style="float:right" form="SubscriptionForm" value="Отправить" />
+<input id="SubFrmOk" class="btn btn-success" type="submit" style="float:right" value="Отправить">
 <br />
 <br />

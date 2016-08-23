@@ -48,6 +48,7 @@ namespace Edu.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();               
                 RegisterServices(kernel);
+
                 return kernel;
             }
             catch
@@ -64,7 +65,8 @@ namespace Edu.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICourseRepository>().To<EFCourseRepository>();
-            kernel.Bind<IDbContext>().To<TestDbContext>();
+            kernel.Bind<Edu.Domain.Abstract.IDbContext>().To<Edu.Domain.Concrete.TestDbContext>();
+            kernel.Bind<Helpers.ICaptchaHelper>().To<Helpers.CaptchaValidator>();
         }        
     }
 }

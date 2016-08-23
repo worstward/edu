@@ -8,14 +8,11 @@ namespace Edu.Domain.Concrete
 {
     public partial class TestDbContext : DbContext, IDbContext
     {
-        static TestDbContext()
-        {
-            Database.SetInitializer<TestDbContext>(null);
-        }
 
         public TestDbContext()
             : base("Name=TestDbContext")
         {
+            Database.SetInitializer<TestDbContext>(new CourseDbInitializer());
         }
 
         public DbSet<CourseDescription> CourseDescriptions { get; set; }

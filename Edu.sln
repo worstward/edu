@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.WebUI", "Edu\Edu.WebUI.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.Domain", "Edu.Domain\Edu.Domain.csproj", "{6FE562F9-4122-4080-940A-2F6C4BBBA651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.Tests", "Edu.Tests\Edu.Tests.csproj", "{90A44C20-28FE-4E62-A2F2-12FAEDE5178F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6FE562F9-4122-4080-940A-2F6C4BBBA651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FE562F9-4122-4080-940A-2F6C4BBBA651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FE562F9-4122-4080-940A-2F6C4BBBA651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90A44C20-28FE-4E62-A2F2-12FAEDE5178F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90A44C20-28FE-4E62-A2F2-12FAEDE5178F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90A44C20-28FE-4E62-A2F2-12FAEDE5178F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90A44C20-28FE-4E62-A2F2-12FAEDE5178F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

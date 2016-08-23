@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Data.Entity;
 using Edu.Domain.Concrete;
+using Edu.Engine;
+
 namespace Edu
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -15,6 +17,8 @@ namespace Edu
             Database.SetInitializer<TestDbContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
         }
     }
 }

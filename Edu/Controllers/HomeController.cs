@@ -15,6 +15,13 @@ namespace Edu.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(ICaptchaHelper captchaHelper)
+        {
+            _captchaHelper = captchaHelper;
+        }
+
+        private ICaptchaHelper _captchaHelper;
+
         //
         // GET: /Home/
         public ActionResult Index()
@@ -43,9 +50,20 @@ namespace Edu.Controllers
         [HttpPost]
         public PartialViewResult SignUpForm(Edu.Models.Enrollee enrollee)
         {
-            string Encoded = Request.Form["g-Recaptcha-Response"];
+            string encoded;
 
-            var isCaptchaValid = CaptchaAnswer.ValidateCaptcha(Encoded);
+
+            try
+            {
+                encoded = Request.Form["g-Recaptcha-Response"];
+            }
+            catch
+            {
+                encoded = "empty message";
+            }
+
+            var isCaptchaValid = _captchaHelper.ValidateCaptcha(encoded);
+
             ViewBag.isCaptchaValid = isCaptchaValid;
             if (ModelState.IsValid && isCaptchaValid)
             {
@@ -69,7 +87,7 @@ namespace Edu.Controllers
                 return PartialView("SignUpOk", enrollee);
             }
             
-            return PartialView();
+            return PartialView("SignUpForm");
         }
 	}
 }

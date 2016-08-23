@@ -1,8 +1,10 @@
-﻿@model IEnumerable<@Edu.Domain.Models.Course>
+﻿@model @Edu.Domain.Models.CoursesPagingViewModel
+
+@using Edu.Helpers;
 
 @{
     ViewBag.Title = "Программы обучения";
-}
+ }
 
 <div id="modDialog" class="modal fade">
     <div id="dialogContent" class="modal-dialog"></div>
@@ -21,17 +23,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var c in Model)
+            @foreach (var c in Model.Courses)
             {
                 var tag =c.Price < 10 ? "success" : "info";
                 <tr class=@tag>
                     <td style="text-align: left">@c.Name</td>
                     <td style="text-align: center">@c.Price</td>
                     <td style="text-align: center;"><p>@c.CourseDescription.ShortDescription</p></td>
-                    <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { id = c.Id }, new { @class = "compItem" })</td>
+                    <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { page = Model.PageInfo.CurrentPageNumber, id = c.Id }, new { @class = "compItem" })</td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <div>
+        @Html.PageLinks(Model.PageInfo, pageNum => Url.Action("Courses", new { page = pageNum }))
+    </div>
 </div>
 

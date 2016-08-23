@@ -38,7 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Edu.Domain">
+    <Reference Include="Edu.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Edu.Domain\bin\Debug\Edu.Domain.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -137,6 +138,7 @@
     <Content Include="Content\ImageGalleryStyles.css" />
     <Content Include="Content\MyStyles.css" />
     <Content Include="Content\Pictures\1375520184767.jpg" />
+    <Content Include="Content\Pictures\carousel-placeholder.png" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -147,6 +149,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
+    <None Include="Properties\PublishProfiles\coursesEduTest.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -160,6 +163,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Respond.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -170,10 +174,15 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Engine\MyViewEngine.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CaptchaAnswer.cs" />
+    <Compile Include="Helpers\AuthAttribute.cs" />
+    <Compile Include="Helpers\CaptchaValidator.cs" />
+    <Compile Include="Helpers\ICaptchaHelper.cs" />
+    <Compile Include="Helpers\PagingHelper.cs" />
     <Compile Include="Models\Enrollee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

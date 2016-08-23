@@ -9,6 +9,7 @@ using Edu.Domain.Abstract;
 
 namespace Edu.Controllers
 {
+    [Helpers.Result]
     public class CourseController : Controller
     {
 
@@ -18,9 +19,25 @@ namespace Edu.Controllers
             this.repository = repository;
         }
 
-        public ActionResult Courses()
+
+        private int _pageSize = 10;
+
+        public ActionResult Courses(int page = 1)
         {
-            return View(repository.Courses);
+            var coursePage = repository.Courses.OrderBy(x => x.Id).Skip((page - 1) * _pageSize).Take(_pageSize);
+
+            var viewModel = new Domain.Models.CoursesPagingViewModel()
+            {
+                Courses = coursePage,
+                PageInfo = new Domain.Models.Paging()
+                {
+                    PageSize = _pageSize,
+                    CurrentPageNumber = page,
+                    Total = repository.Courses.Count()
+                }
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult Details(int id)
@@ -32,13 +49,5 @@ namespace Edu.Controllers
             return HttpNotFound();
         }
 
-
-
-        ////
-        //// GET: /Courses/
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
 	}
 }

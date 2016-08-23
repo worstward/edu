@@ -7,10 +7,11 @@
     </div>
     <div class="modal-body" id="descModalBody">
         <dl class="dl-horizontal">
+
             <dt>Курс:</dt>
             <dd>@Html.DisplayFor(crs => crs.Name)</dd>
             <dt>Описание:</dt>
-            <dd>@Html.DisplayFor(crs => crs.CourseDescription.LongDescription)</dd>
+            <dd>@Html.Raw(@Model.CourseDescription.LongDescription)</dd>
         </dl>
     </div>
 </div>
