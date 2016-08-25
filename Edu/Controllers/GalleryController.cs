@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Edu.Controllers
 {
+    [Helpers.Exception]
     public class GalleryController : Controller
     {
         //

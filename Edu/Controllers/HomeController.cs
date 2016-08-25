@@ -13,6 +13,8 @@ using System.Net.Mail;
 
 namespace Edu.Controllers
 {
+
+    [Helpers.Exception]
     public class HomeController : Controller
     {
         public HomeController(ICaptchaHelper captchaHelper)
@@ -71,11 +73,11 @@ namespace Edu.Controllers
                 smtp.Host = "smtp.mail.ru";
                 smtp.Port = 587;
 
-                smtp.Credentials = new System.Net.NetworkCredential("", "");
+                smtp.Credentials = new System.Net.NetworkCredential(MailInfoRes.Login, MailInfoRes.Password);
 
                 MailMessage mail = new MailMessage();
-                mail.To.Add("");
-                mail.From = new MailAddress("");
+                mail.To.Add(MailInfoRes.ReceiverMail);
+                mail.From = new MailAddress(MailInfoRes.Sender);
                 mail.Subject = "Заявка на обучение";
                 string Body = string.Format("Заявка от пользователя {0} {1}. Пожалуйста, перезвоните по телефону {2} для уточнения условий. Почта для обратной связи: {3}",
                     enrollee.Name, enrollee.Surname, enrollee.Phone, enrollee.Email);

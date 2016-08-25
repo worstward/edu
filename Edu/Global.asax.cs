@@ -15,6 +15,8 @@ namespace Edu
         protected void Application_Start()
         {
             Database.SetInitializer<TestDbContext>(null);
+            GlobalFilters.Filters.Add(new Helpers.ExceptionAttribute());
+            
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewEngines.Engines.Clear();

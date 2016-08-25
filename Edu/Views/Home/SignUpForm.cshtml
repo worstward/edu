@@ -11,15 +11,12 @@
 <script type="text/javascript">
 
     function CaptchaReload() {
-            grecaptcha.render("recaptcha", {
-                "sitekey": "6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk",
-                "callback": grecaptcha.reset()
-            });
-        }
+        grecaptcha.render("recaptcha", {
+            "sitekey": "6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk",
+            "callback": grecaptcha.reset()
+        })
+    };
 </script>
-
-
-
 
 
     <div style="text-align: justify; width: 97%; " class="@(Html.ViewData.ModelState.IsValid && ViewBag.isCaptchaValid ? null : "alert-danger")">
@@ -60,7 +57,7 @@
         <span class="glyphicon  @Validate(Html.IdFor(x => x.Email), "glyphicon-remove") form-control-feedback"></span>
     </div>
     <br />
-        <div class="g-recaptcha" data-sitekey="6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk"></div>
+        <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfWJycTAAAAALcPRyawpVcDuCM4uZkU_p50DMrk"></div>
 <hr />   
 <input id="SubFrmOk" class="btn btn-success" type="submit" style="float:right" value="Отправить">
 <br />

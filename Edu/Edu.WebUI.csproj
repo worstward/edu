@@ -137,7 +137,8 @@
     <Content Include="Content\Icons\youtube_color.png" />
     <Content Include="Content\ImageGalleryStyles.css" />
     <Content Include="Content\MyStyles.css" />
-    <Content Include="Content\Pictures\1375520184767.jpg" />
+    <Content Include="Content\Pictures\surprisedCat.jpg" />
+    <Content Include="Content\Pictures\background.jpg" />
     <Content Include="Content\Pictures\carousel-placeholder.png" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -179,10 +180,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CaptchaAnswer.cs" />
-    <Compile Include="Helpers\AuthAttribute.cs" />
+    <Compile Include="Helpers\ExceptionAttribute.cs" />
     <Compile Include="Helpers\CaptchaValidator.cs" />
     <Compile Include="Helpers\ICaptchaHelper.cs" />
     <Compile Include="Helpers\PagingHelper.cs" />
+    <Compile Include="MailInfoRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailInfoRes.resx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Enrollee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,6 +206,7 @@
     <Content Include="Views\Home\SignUpForm.cshtml" />
     <Content Include="Views\Home\SignUpOk.cshtml" />
     <Content Include="Views\Gallery\ViewGallery.cshtml" />
+    <Content Include="Views\Shared\ErrorPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -209,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MailInfoRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MailInfoRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

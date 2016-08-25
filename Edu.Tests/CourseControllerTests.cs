@@ -86,7 +86,6 @@ namespace Edu.Tests
             var viewResult = _courseController.Details(courseIndex) as PartialViewResult;
             var course = viewResult.Model as Course;
 
-
             Assert.AreEqual(course.Id, courseIndex);
         }
 

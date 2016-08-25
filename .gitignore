@@ -154,6 +154,11 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+
+#Credential info for mailing
+MailInfoRes.resx
+MailInfoRes.Designer.cs
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 

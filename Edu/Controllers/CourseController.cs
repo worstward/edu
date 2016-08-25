@@ -9,7 +9,8 @@ using Edu.Domain.Abstract;
 
 namespace Edu.Controllers
 {
-    [Helpers.Result]
+
+    [Helpers.Exception]
     public class CourseController : Controller
     {
 
@@ -19,12 +20,17 @@ namespace Edu.Controllers
             this.repository = repository;
         }
 
-
         private int _pageSize = 10;
 
         public ActionResult Courses(int page = 1)
         {
             var coursePage = repository.Courses.OrderBy(x => x.Id).Skip((page - 1) * _pageSize).Take(_pageSize);
+
+            if(coursePage.Count() == 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
 
             var viewModel = new Domain.Models.CoursesPagingViewModel()
             {

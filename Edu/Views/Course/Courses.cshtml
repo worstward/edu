@@ -10,6 +10,8 @@
     <div id="dialogContent" class="modal-dialog"></div>
 </div>
 
+@section Main
+    {
 <h2 style="text-align: center">Образовательные программы</h2>
 <div id="courseTable" class="container">
    
@@ -25,11 +27,11 @@
         <tbody>
             @foreach (var c in Model.Courses)
             {
-                var tag =c.Price < 10 ? "success" : "info";
+                var tag = c.Price < 10 ? "success" : "info";
                 <tr class=@tag>
                     <td style="text-align: left">@c.Name</td>
                     <td style="text-align: center">@c.Price</td>
-                    <td style="text-align: center;"><p>@c.CourseDescription.ShortDescription</p></td>
+                    <td style="text-align: center"><p>@c.CourseDescription.ShortDescription</p></td>
                     <td style="text-align: right">@Html.ActionLink("Подробнее", "Details", new { page = Model.PageInfo.CurrentPageNumber, id = c.Id }, new { @class = "compItem" })</td>
                 </tr>
             }
@@ -41,3 +43,4 @@
     </div>
 </div>
 
+    }
